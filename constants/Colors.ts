@@ -16,4 +16,5 @@ export const COLORS = {
     100: "#d6eff7",
     50: "#eff9fc",
   },
+  gray: "#9baab0",
 };
