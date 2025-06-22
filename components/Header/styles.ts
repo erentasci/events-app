@@ -1,13 +1,13 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: Platform.OS === "android" ? 40 : 20,
     paddingVertical: 5,
     paddingHorizontal: 20,
-    gap: 20,
+    gap: 10,
   },
   text: {
     fontSize: 28,

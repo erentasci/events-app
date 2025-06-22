@@ -4,16 +4,15 @@
     "title": "Outdoor Movie Night",
     "datetime": "2025-06-25T20:00:00Z",
     "location": "Riverside Park",
-    "description": "Classic film screening under the stars.",
+    "description": "Join us for a magical evening under the stars with a classic movie screening at Riverside Park. Bring a blanket, some popcorn, and enjoy an open-air cinema experience like no other. Perfect for families, friends, or a romantic date night.",
     "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70"
   },
-
   {
     "id": 2,
     "title": "Book Club Meeting",
     "datetime": "2025-06-27T17:00:00Z",
     "location": "Downtown Library",
-    "description": "Discussing this month’s featured novel.",
+    "description": "Come share your thoughts and insights at our monthly book club meeting. This session’s discussion will focus on this month’s featured novel, encouraging open dialogue and fresh perspectives. Light refreshments will be served.",
     "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794"
   },
   {
@@ -21,7 +20,7 @@
     "title": "Food Truck Festival",
     "datetime": "2025-06-28T12:00:00Z",
     "location": "Harbor Square",
-    "description": "Enjoy local eats from a variety of food trucks.",
+    "description": "Taste your way through an exciting variety of gourmet street food at Harbor Square. The Food Truck Festival features over 20 local vendors serving everything from fusion tacos to artisanal desserts, along with live music and activities for all ages.",
     "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
   },
   {
@@ -29,7 +28,7 @@
     "title": "Photography Walk",
     "datetime": "2025-06-29T08:00:00Z",
     "location": "Old Town District",
-    "description": "Capture the charm of historic buildings.",
+    "description": "Explore the charm of historic Old Town while refining your photography skills in this guided photo walk. Ideal for all levels, you'll learn to capture light, composition, and architecture with a professional photographer as your guide.",
     "image": "https://images.unsplash.com/photo-1483721310020-03333e577078"
   },
   {
@@ -37,7 +36,7 @@
     "title": "Coding Bootcamp",
     "datetime": "2025-06-30T10:00:00Z",
     "location": "Tech Campus",
-    "description": "One-day intensive JavaScript training.",
+    "description": "Dive into JavaScript with our full-day intensive bootcamp designed for beginners and intermediate learners. This hands-on workshop covers modern JavaScript fundamentals, practical exercises, and mentorship from industry professionals.",
     "image": "https://images.unsplash.com/photo-1518770660439-4636190af475"
   },
   {
@@ -45,7 +44,7 @@
     "title": "Jazz Night",
     "datetime": "2025-07-01T21:00:00Z",
     "location": "Blue Note Lounge",
-    "description": "Live jazz from local musicians.",
+    "description": "Experience a soulful night of live jazz at the Blue Note Lounge featuring performances by top local musicians. Enjoy a cozy ambiance, signature cocktails, and an unforgettable atmosphere perfect for music lovers and social nights out.",
     "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
   },
   {
@@ -53,7 +52,7 @@
     "title": "Wellness Seminar",
     "datetime": "2025-07-02T15:00:00Z",
     "location": "Health & Wellness Center",
-    "description": "Learn about holistic health practices.",
+    "description": "Take part in a rejuvenating wellness seminar focused on holistic health and personal growth. Topics include mindfulness, stress management, nutrition, and self-care techniques, presented by experienced health professionals.",
     "image": "https://images.unsplash.com/photo-1505751172876-fa1923c5c528"
   }
 ]
