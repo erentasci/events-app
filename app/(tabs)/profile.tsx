@@ -1,9 +1,9 @@
 import { Text, View } from "@/components/Themed";
 
-export default function EventsPage() {
+export default function ProfilePage() {
   return (
     <View>
-      <Text>Events Page</Text>
+      <Text>ProfilePage</Text>
     </View>
   );
 }
