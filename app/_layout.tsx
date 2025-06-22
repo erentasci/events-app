@@ -6,7 +6,7 @@ export default function RootLayoutNav() {
       <Stack.Screen
         name="index"
         options={{
-          title: "Welcome",
+          headerShown: false,
         }}
       />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

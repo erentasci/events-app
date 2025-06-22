@@ -1,19 +1,17 @@
 import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 
 export default function WelcomeScreen() {
   const router = useRouter();
+
   return (
-    <View>
-      <Text>Welcome Screen</Text>
-      <Button
-        title="Go to Tabs"
-        onPress={() => {
-          router.push("/(tabs)");
-        }}
-      />
-    </View>
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#19262e", flexDirection: "column" }}
+    >
+      <StatusBar style="light" />
+    </SafeAreaView>
   );
 }
 
