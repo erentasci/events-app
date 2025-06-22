@@ -54,7 +54,7 @@ export default function WelcomeScreen() {
           onPress={() => router.push("/(tabs)")}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
     </SafeAreaView>

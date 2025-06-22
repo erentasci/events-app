@@ -13,6 +13,12 @@ export default function RootLayoutNav() {
           }}
         />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="event/[id]"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     </>
   );
