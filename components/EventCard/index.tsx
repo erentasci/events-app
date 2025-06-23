@@ -11,7 +11,6 @@ const EventCard: FC<EventCardProps> = ({
   title,
   date,
   location,
-  onPress,
 }) => {
   const router = useRouter();
 

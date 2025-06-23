@@ -8,10 +8,10 @@ interface EventStore {
   setUsername: (username: string) => void;
   loading: boolean;
   setLoading: (loading: boolean) => void;
-  events: Event[];
-  setEvents: (events: Event[]) => void;
-  addEvent: (event: Event) => void;
-  removeEvent: (id: string) => void;
+  attentedEvents: Event[];
+  setAttentedEvents: (newEvent: Event) => void;
+  removeAttentedEvent: (id: string) => void;
+  clearAttentedEvents: () => void;
   clearStorage: () => void;
 }
 
@@ -22,14 +22,21 @@ export const useEventStore = create<EventStore>()(
       setUsername: (username) => set({ username }),
       loading: false,
       setLoading: (loading) => set({ loading }),
-      events: [],
-      setEvents: (events) => set({ events }),
-      addEvent: (event) =>
-        set((state) => ({ events: [...state.events, event] })),
-      removeEvent: (id) =>
+      attentedEvents: [],
+      setAttentedEvents: (newEvent) =>
         set((state) => ({
-          events: state.events.filter((event) => event.id !== id),
+          attentedEvents: [...state.attentedEvents, newEvent],
         })),
+      removeAttentedEvent: (id) => {
+        set((state) => ({
+          attentedEvents: state.attentedEvents.filter(
+            (event) => event.id !== id
+          ),
+        }));
+      },
+      clearAttentedEvents: () => {
+        set({ attentedEvents: [] });
+      },
       clearStorage: () => {
         AsyncStorage.clear();
       },

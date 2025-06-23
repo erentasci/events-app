@@ -1,6 +1,6 @@
 import { formatDate } from "@/utils";
 import React, { FC } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, Text } from "react-native";
 import EventCard from "../EventCard";
 import eventListStyles from "./styles";
 import { EventListProps } from "./types";
@@ -22,10 +22,11 @@ const EventList: FC<EventListProps> = ({ events }) => {
       )}
       keyExtractor={(item) => item.id.toString()}
       showsVerticalScrollIndicator={false}
+      ListEmptyComponent={() => (
+        <Text style={eventListStyles.emptyText}>No events</Text>
+      )}
     />
   );
 };
 
 export default EventList;
-
-const styles = StyleSheet.create({});

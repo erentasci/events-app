@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function ProfilePage() {
-  const { username, clearStorage } = useEventStore();
+  const { username, clearStorage, attentedEvents } = useEventStore();
 
   return (
     <SafeAreaView
@@ -35,7 +35,7 @@ export default function ProfilePage() {
           You can view and manage your events here:
         </Text>
       </View>
-      <EventList events={require("@/assets/data/events.json")} />
+      <EventList events={attentedEvents} />
     </SafeAreaView>
   );
 }
