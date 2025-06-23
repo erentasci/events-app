@@ -5,7 +5,13 @@ import { Text, TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 import { HeaderProps } from "./types";
 
-const Header: FC<HeaderProps> = ({ title, onBackPress }) => {
+const Header: FC<HeaderProps> = ({
+  title,
+  onBackPress,
+  rightAction,
+  rightActionIcon,
+  onRightActionPress,
+}) => {
   const router = useRouter();
 
   const handleBackPress = () => {
@@ -18,9 +24,15 @@ const Header: FC<HeaderProps> = ({ title, onBackPress }) => {
     <View style={styles.container}>
       {onBackPress && (
         <TouchableOpacity onPress={handleBackPress}>
+          {rightActionIcon}
+        </TouchableOpacity>
+      )}
+      <Text style={styles.text}>{title}</Text>
+      {rightAction && (
+        <TouchableOpacity onPress={onRightActionPress}>
           <Ionicons
-            name="arrow-back"
-            size={28}
+            name={rightActionIcon}
+            size={32}
             color="#fff"
             style={{
               fontWeight: "bold",
@@ -28,7 +40,6 @@ const Header: FC<HeaderProps> = ({ title, onBackPress }) => {
           />
         </TouchableOpacity>
       )}
-      <Text style={styles.text}>{title}</Text>
     </View>
   );
 };

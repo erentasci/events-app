@@ -20,29 +20,34 @@ export default function ProfilePage() {
         end={{ x: 1.0, y: 1.0 }}
         style={StyleSheet.absoluteFill}
       />
-      <Header title="Profile" />
-      <View style={{ padding: 20, gap: 10 }}>
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: "600",
-            color: "#fff",
-            textAlign: "left",
-          }}
-        >
-          Welcome, Eren 🤩
-        </Text>
-        <Text
-          style={{
-            color: COLORS.main[800],
-          }}
-        >
+      <Header
+        title="Profile"
+        rightAction
+        rightActionIcon="exit-outline"
+        onRightActionPress={() => {
+          console.log("Logout action pressed");
+        }}
+      />
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.title}>Welcome, Eren 🤩</Text>
+        <Text style={styles.subtitle}>
           You can view and manage your events here:
         </Text>
       </View>
-      <View style={{ paddingHorizontal: 20 }}>
-        <EventList events={require("@/assets/data/events.json")} />
-      </View>
+      <EventList events={require("@/assets/data/events.json")} />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  descriptionContainer: { padding: 20, gap: 10 },
+  title: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: "#fff",
+    textAlign: "left",
+  },
+  subtitle: {
+    color: COLORS.main[800],
+  },
+});
