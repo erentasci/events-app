@@ -12,6 +12,7 @@ interface EventStore {
   setEvents: (events: Event[]) => void;
   addEvent: (event: Event) => void;
   removeEvent: (id: string) => void;
+  clearStorage: () => void;
 }
 
 export const useEventStore = create<EventStore>()(
@@ -29,6 +30,9 @@ export const useEventStore = create<EventStore>()(
         set((state) => ({
           events: state.events.filter((event) => event.id !== id),
         })),
+      clearStorage: () => {
+        AsyncStorage.clear();
+      },
     }),
     {
       name: "eventsApp-storage",

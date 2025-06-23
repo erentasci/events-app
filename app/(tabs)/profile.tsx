@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function ProfilePage() {
-  const { username } = useEventStore();
+  const { username, clearStorage } = useEventStore();
 
   return (
     <SafeAreaView
@@ -27,9 +27,7 @@ export default function ProfilePage() {
         title="Profile"
         rightAction
         rightActionIcon="exit-outline"
-        onRightActionPress={() => {
-          console.log("Logout action pressed");
-        }}
+        onRightActionPress={clearStorage}
       />
       <View style={styles.descriptionContainer}>
         <Text style={styles.title}>Welcome, {username} 🤩</Text>

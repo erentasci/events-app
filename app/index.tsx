@@ -24,7 +24,7 @@ export default function WelcomeScreen() {
     const checkUsername = async () => {
       await new Promise((resolve) => setTimeout(resolve, 100));
 
-      if (username.length > 0) {
+      if (username && username.length > 0) {
         router.replace("/(tabs)");
       } else {
         setLoading(false);
