@@ -6,6 +6,8 @@ import { createJSONStorage, persist } from "zustand/middleware";
 interface EventStore {
   username: string;
   setUsername: (username: string) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
   events: Event[];
   setEvents: (events: Event[]) => void;
   addEvent: (event: Event) => void;
@@ -17,6 +19,8 @@ export const useEventStore = create<EventStore>()(
     (set) => ({
       username: "",
       setUsername: (username) => set({ username }),
+      loading: false,
+      setLoading: (loading) => set({ loading }),
       events: [],
       setEvents: (events) => set({ events }),
       addEvent: (event) =>
@@ -28,6 +32,14 @@ export const useEventStore = create<EventStore>()(
     }),
     {
       name: "eventsApp-storage",
+      /*
+      ALTERNATIF STORAGE 
+      storage: {
+        getItem: (name) => AsyncStorage.getItem(name),
+        setItem: (name, value) => AsyncStorage.setItem(name, value),
+        removeItem: (name) => AsyncStorage.removeItem(name),
+        },       
+      */
       storage: createJSONStorage(() => AsyncStorage),
     }
   )
