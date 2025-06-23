@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import { COLORS } from "@/constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
@@ -10,7 +11,6 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
 } from "react-native";
 
 export default function WelcomeScreen() {
@@ -50,12 +50,7 @@ export default function WelcomeScreen() {
           placeholderTextColor="#888"
           style={styles.nameInput}
         />
-        <TouchableOpacity
-          onPress={() => router.push("/(tabs)")}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Continue</Text>
-        </TouchableOpacity>
+        <Button text="Continue" onPress={() => router.push("/(tabs)")} />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -98,18 +93,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
-  },
-  button: {
-    width: "100%",
-    backgroundColor: COLORS.main[950],
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
   },
 });
