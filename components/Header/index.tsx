@@ -24,7 +24,14 @@ const Header: FC<HeaderProps> = ({
     <View style={styles.container}>
       {onBackPress && (
         <TouchableOpacity onPress={handleBackPress}>
-          {rightActionIcon}
+          <Ionicons
+            name="arrow-back"
+            size={28}
+            color="#fff"
+            style={{
+              fontWeight: "bold",
+            }}
+          />
         </TouchableOpacity>
       )}
       <Text style={styles.text}>{title}</Text>

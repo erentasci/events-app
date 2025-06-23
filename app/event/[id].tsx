@@ -117,7 +117,6 @@ const EventDetail = () => {
             fontWeight: "500",
             color: COLORS.main[800],
             textAlign: "center",
-
             lineHeight: 20,
           }}
         >

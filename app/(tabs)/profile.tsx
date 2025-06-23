@@ -1,10 +1,13 @@
 import EventList from "@/components/EventList";
 import Header from "@/components/Header";
 import { COLORS } from "@/constants/colors";
+import { useEventStore } from "@/store/useEventStore";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function ProfilePage() {
+  const { username } = useEventStore();
+
   return (
     <SafeAreaView
       style={{
@@ -29,7 +32,7 @@ export default function ProfilePage() {
         }}
       />
       <View style={styles.descriptionContainer}>
-        <Text style={styles.title}>Welcome, Eren 🤩</Text>
+        <Text style={styles.title}>Welcome, {username} 🤩</Text>
         <Text style={styles.subtitle}>
           You can view and manage your events here:
         </Text>
