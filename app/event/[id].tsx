@@ -7,8 +7,11 @@ import { Entypo, MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useLocalSearchParams } from "expo-router";
 
+const { width, height } = Dimensions.get("window");
+
 import React from "react";
 import {
+  Dimensions,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -93,12 +96,12 @@ export default EventDetail;
 
 const styles = StyleSheet.create({
   button: {
-    width: "100%",
+    width: width * 0.8,
     backgroundColor: COLORS.main[700],
-    paddingVertical: 16,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    marginBottom: 40,
+    paddingVertical: height * 0.02,
+    paddingHorizontal: width * 0.05,
+    borderRadius: 12,
+    marginBottom: 20,
   },
   buttonText: {
     color: "#fff",
@@ -116,13 +119,13 @@ const styles = StyleSheet.create({
     gap: 30,
   },
   image: {
-    width: "100%",
-    height: 250,
+    width: width * 0.8,
+    height: height * 0.2,
     borderRadius: 16,
     resizeMode: "cover",
   },
   title: {
-    fontSize: 26,
+    fontSize: 20,
     fontWeight: "bold",
     color: COLORS.main[950],
   },
@@ -132,8 +135,8 @@ const styles = StyleSheet.create({
     width: "90%",
   },
   description: {
-    fontSize: 14,
-    fontWeight: "500",
+    fontSize: 16,
+    fontWeight: "400",
     color: COLORS.main[800],
     textAlign: "center",
     lineHeight: 20,
@@ -144,7 +147,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   infoText: {
-    fontSize: 13,
+    fontSize: 14,
     color: COLORS.main[800],
   },
 });

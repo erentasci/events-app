@@ -5,7 +5,6 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SplashScreen, useRouter } from "expo-router";
 import React, { useEffect } from "react";
 import {
-  ActivityIndicator,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -13,12 +12,11 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
 } from "react-native";
 
 export default function WelcomeScreen() {
   const router = useRouter();
-  const { username, setUsername, loading, setLoading } = useEventStore();
+  const { username, setUsername } = useEventStore();
 
   useEffect(() => {
     const checkUsername = async () => {
@@ -27,7 +25,6 @@ export default function WelcomeScreen() {
       if (username && username.length > 0) {
         router.replace("/(tabs)");
       } else {
-        setLoading(false);
         await SplashScreen.hideAsync();
       }
     };
@@ -40,33 +37,6 @@ export default function WelcomeScreen() {
       router.push("/(tabs)");
     }
   };
-
-  if (loading) {
-    return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <LinearGradient
-          colors={[
-            COLORS.welcomeBackground.primary,
-            COLORS.welcomeBackground.secondary,
-          ]}
-          start={{ x: 0.0, y: 0.0 }}
-          end={{ x: 1.0, y: 1.0 }}
-          style={StyleSheet.absoluteFill}
-        />
-        <View style={styles.loadingContainer}>
-          <Image
-            source={require("@/assets/images/welcome-logo.png")}
-            style={styles.logo}
-          />
-          <ActivityIndicator
-            size="large"
-            color={COLORS.main[950]}
-            style={{ marginTop: 20 }}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
 
   return (
     <SafeAreaView

@@ -1,9 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, useWindowDimensions } from "react-native";
+
+const { width, height } = useWindowDimensions();
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
-    height: 300,
+    width: width / 1.2,
+    height: height / 3,
     borderRadius: 16,
     overflow: "hidden",
     backgroundColor: "#000",

@@ -6,6 +6,8 @@ import { createJSONStorage, persist } from "zustand/middleware";
 interface EventStore {
   username: string;
   setUsername: (username: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
   loading: boolean;
   setLoading: (loading: boolean) => void;
   attentedEvents: Event[];
@@ -22,6 +24,8 @@ export const useEventStore = create<EventStore>()(
       setUsername: (username) => set({ username }),
       loading: false,
       setLoading: (loading) => set({ loading }),
+      searchQuery: "",
+      setSearchQuery: (query) => set({ searchQuery: query }),
       attentedEvents: [],
       setAttentedEvents: (newEvent) =>
         set((state) => ({
