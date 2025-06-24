@@ -1,14 +1,13 @@
 import events from "@/assets/data/events.json";
 import Button from "@/components/Button";
 import Header from "@/components/Header";
+
 import { COLORS } from "@/constants/colors";
 import { useEventStore } from "@/store/useEventStore";
 import { formatDate } from "@/utils";
 import { Entypo, MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { useLocalSearchParams } from "expo-router";
-
-const { width, height } = Dimensions.get("window");
 
 import React from "react";
 import {
@@ -19,6 +18,8 @@ import {
   Text,
   View,
 } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const EventDetail = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -51,36 +52,46 @@ const EventDetail = () => {
       />
       <Header title="Event Details" onBackPress />
       <View style={styles.eventDetailContainer}>
-        <Image
-          source={{
-            uri: event?.image,
+        <View
+          style={{
+            flex: 1,
+            gap: 20,
+            justifyContent: "flex-start",
+            alignItems: "center",
           }}
-          style={styles.image}
-        />
+        >
+          <Image
+            source={{
+              uri: event?.image,
+            }}
+            style={styles.image}
+          />
 
-        <Text style={styles.title}>{event?.title}</Text>
-        <View style={styles.subInfoContainer}>
-          <View style={styles.infoBox}>
-            <Entypo name="location-pin" size={24} color={COLORS.main[800]} />
-            <Text style={styles.infoText}>{event?.location}</Text>
+          <Text style={styles.title}>{event?.title}</Text>
+          <View style={styles.subInfoContainer}>
+            <View style={styles.infoBox}>
+              <Entypo name="location-pin" size={24} color={COLORS.main[800]} />
+              <Text style={styles.infoText}>{event?.location}</Text>
+            </View>
+            <View style={styles.infoBox}>
+              <MaterialIcons
+                name="date-range"
+                size={24}
+                color={COLORS.main[800]}
+              />
+              <Text style={styles.infoText}>
+                {formatDate(event?.datetime ?? "")}
+              </Text>
+            </View>
           </View>
-          <View style={styles.infoBox}>
-            <MaterialIcons
-              name="date-range"
-              size={24}
-              color={COLORS.main[800]}
-            />
-            <Text style={styles.infoText}>
-              {formatDate(event?.datetime ?? "")}
-            </Text>
-          </View>
+          <Text style={styles.description}>{event?.description}</Text>
         </View>
-        <Text style={styles.description}>{event?.description}</Text>
         <Button
           text={isAttented ? "Cancel" : "I'm going"}
           onPress={handleAttendEvent}
           addedStyles={{
             backgroundColor: isAttented ? "#8e0e0e" : COLORS.main[800],
+            marginBottom: height * 0.02,
           }}
         />
       </View>

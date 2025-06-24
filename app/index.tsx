@@ -5,6 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SplashScreen, useRouter } from "expo-router";
 import React, { useEffect } from "react";
 import {
+  Dimensions,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -13,6 +14,8 @@ import {
   Text,
   TextInput,
 } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 export default function WelcomeScreen() {
   const router = useRouter();
@@ -54,7 +57,9 @@ export default function WelcomeScreen() {
         style={StyleSheet.absoluteFill}
       />
       <KeyboardAvoidingView
-        keyboardVerticalOffset={120}
+        keyboardVerticalOffset={
+          Platform.OS === "ios" ? height * 0.35 : height * 0.05
+        }
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
