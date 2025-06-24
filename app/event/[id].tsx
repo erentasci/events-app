@@ -1,4 +1,5 @@
 import events from "@/assets/data/events.json";
+import Button from "@/components/Button";
 import Header from "@/components/Header";
 import { COLORS } from "@/constants/colors";
 import { useEventStore } from "@/store/useEventStore";
@@ -16,16 +17,15 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 
 const EventDetail = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const event = events.find((event) => event.id.toString() === id);
   const { setAttentedEvents, attentedEvents, removeAttentedEvent } =
     useEventStore();
 
+  const event = events.find((event) => event.id.toString() === id);
   const isAttented = attentedEvents.find((e) => e.id === event?.id.toString());
 
   const handleAttendEvent = () => {
@@ -76,17 +76,13 @@ const EventDetail = () => {
           </View>
         </View>
         <Text style={styles.description}>{event?.description}</Text>
-        <TouchableOpacity
-          style={[
-            styles.button,
-            { backgroundColor: isAttented ? "#8e0e0e" : COLORS.main[800] },
-          ]}
+        <Button
+          text={isAttented ? "Cancel" : "I'm going"}
           onPress={handleAttendEvent}
-        >
-          <Text style={styles.buttonText}>
-            {isAttented ? "Cancel" : "I'm going"}
-          </Text>
-        </TouchableOpacity>
+          addedStyles={{
+            backgroundColor: isAttented ? "#8e0e0e" : COLORS.main[800],
+          }}
+        />
       </View>
     </SafeAreaView>
   );

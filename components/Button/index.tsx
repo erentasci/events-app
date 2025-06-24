@@ -3,10 +3,16 @@ import { Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { ButtonProps } from "./types";
 
-const Button: FC<ButtonProps> = ({ text, onPress, disabled, ...props }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  onPress,
+  disabled,
+  addedStyles,
+  ...props
+}) => {
   return (
     <TouchableOpacity
-      style={styles.button}
+      style={[styles.button, addedStyles]}
       onPress={onPress}
       disabled={disabled}
       activeOpacity={0.7}
