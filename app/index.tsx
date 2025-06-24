@@ -1,5 +1,5 @@
 import Button from "@/components/Button";
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/constants/Colors";
 import { useEventStore } from "@/store/useEventStore";
 import { LinearGradient } from "expo-linear-gradient";
 import { SplashScreen, useRouter } from "expo-router";
@@ -25,7 +25,7 @@ export default function WelcomeScreen() {
     const checkUsername = async () => {
       await new Promise((resolve) => setTimeout(resolve, 100));
 
-      if (username && username.length > 0) {
+      if (username?.trim().length > 0) {
         router.replace("/(tabs)");
       } else {
         await SplashScreen.hideAsync();
@@ -73,7 +73,7 @@ export default function WelcomeScreen() {
           Discover, join, and enjoy events that match your vibe.
         </Text>
         <TextInput
-          placeholder="Enter your name"
+          placeholder="Enter your username"
           placeholderTextColor="#888"
           style={styles.nameInput}
           value={username}

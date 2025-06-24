@@ -2,7 +2,7 @@ import events from "@/assets/data/events.json";
 import Button from "@/components/Button";
 import Header from "@/components/Header";
 
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/constants/Colors";
 import { useEventStore } from "@/store/useEventStore";
 import { formatDate } from "@/utils";
 import { Entypo, MaterialIcons } from "@expo/vector-icons";
@@ -52,14 +52,7 @@ const EventDetail = () => {
       />
       <Header title="Event Details" onBackPress />
       <View style={styles.eventDetailContainer}>
-        <View
-          style={{
-            flex: 1,
-            gap: 20,
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
+        <View style={styles.eventDetailContentContainer}>
           <Image
             source={{
               uri: event?.image,
@@ -124,6 +117,13 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     marginTop: 20,
     gap: 30,
+  },
+
+  eventDetailContentContainer: {
+    flex: 1,
+    gap: 20,
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   image: {
     width: width * 0.8,

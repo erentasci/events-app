@@ -2,7 +2,7 @@ import EventList from "@/components/EventList";
 import { Event } from "@/components/EventList/types";
 import Header from "@/components/Header";
 import SearchInput from "@/components/SearchInput";
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/constants/Colors";
 import { useEventStore } from "@/store/useEventStore";
 import { LinearGradient } from "expo-linear-gradient";
 import { useEffect } from "react";

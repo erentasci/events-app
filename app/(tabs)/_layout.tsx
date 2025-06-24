@@ -1,4 +1,4 @@
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/constants/Colors";
 import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 import React from "react";
