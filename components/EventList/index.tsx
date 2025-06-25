@@ -23,7 +23,12 @@ const EventList: FC<EventListProps> = ({ events }) => {
       keyExtractor={(item) => item.id.toString()}
       showsVerticalScrollIndicator={false}
       ListEmptyComponent={() => (
-        <Text style={eventListStyles.emptyText}>No events</Text>
+        <Text style={eventListStyles.text}>No events</Text>
+      )}
+      ListHeaderComponent={() => (
+        <Text style={eventListStyles.text}>
+          {events.length > 0 && `${events.length} events going on`}
+        </Text>
       )}
     />
   );

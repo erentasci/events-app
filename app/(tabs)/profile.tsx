@@ -1,6 +1,6 @@
 import EventList from "@/components/EventList";
 import Header from "@/components/Header";
-import { COLORS } from "@/constants/colors";
+import { COLORS } from "@/constants/Colors";
 import { useEventStore } from "@/store/useEventStore";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
